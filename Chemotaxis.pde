@@ -6,8 +6,8 @@ void setup() {
   redBact = new colony[100]; 
   blueBact = new colony[100]; 
   for (int i=0;i<100;i++){
-  redBact[i] = new colony(30, 30, 255);
-  blueBact[i] = new colony(370, 370, 0); 
+  redBact[i] = new colony(30, 30, 255, true);
+  blueBact[i] = new colony(370, 370, 0, false); 
   }
 }
 void draw() {
@@ -21,10 +21,12 @@ void draw() {
 }
 class colony { 
   int myX, myY, myColor;
-  colony(int x, int y, int colour) {
+  boolean rightOrLeft; 
+  colony(int x, int y, int colour, boolean disthing) {
     myX = x; 
     myY = y;
     myColor = colour; 
+    rightOrLeft = disthing;
   }
   void move() {
     if (rightOrLeft == true) {
